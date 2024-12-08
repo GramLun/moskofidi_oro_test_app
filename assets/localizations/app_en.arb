@@ -1,0 +1,12 @@
+{
+    "@@locale": "en",
+    "language": "English",
+
+    "filesScreenTitle": "Files",
+    "historyScreenTitle": "History",
+    
+    "viewingHistoryTabCaption": "Viewed",
+    "downloadingHistoryTabCaption": "Downloaded",
+    
+    "emptyMessage": "Empty"
+}
