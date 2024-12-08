@@ -1,11 +1,11 @@
-import 'package:oro_moskofidi_test_app/core/utils/models/route.dart';
+import 'package:oro_moskofidi_test_app/core/navigation/models/route.dart';
 
-class HomeRoute {
-  static const files = Route(
+final class HomeRoute {
+  static const files = BaseRoute(
     name: 'files_list_screen',
     path: '/files',
   );
-  static const history = Route(
+  static const history = BaseRoute(
     path: '/history',
     name: 'history_screen',
   );

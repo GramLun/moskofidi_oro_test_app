@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:oro_moskofidi_test_app/core/observers/route_observer.dart';
+
 import 'package:oro_moskofidi_test_app/core/navigation/routes/app_route.dart';
 import 'package:oro_moskofidi_test_app/core/navigation/routes/home_route.dart';
 import 'package:oro_moskofidi_test_app/core/navigation/routers/home_router.dart';
@@ -14,6 +16,9 @@ final class AppRouter {
   final router = GoRouter(
     initialLocation: HomeRoute.files.path,
     navigatorKey: _rootAppNavigatorKey,
+    observers: [
+      BaseRouteObserver(),
+    ],
     routes: [
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
@@ -26,7 +31,9 @@ final class AppRouter {
       GoRoute(
         path: AppRoute.fileDetails.path,
         name: AppRoute.fileDetails.name,
-        builder: (context, state) => const FileDetailsScreen(),
+        builder: (context, state) => FileDetailsScreen(
+          url: state.pathParameters['url']!,
+        ),
       ),
     ],
   );

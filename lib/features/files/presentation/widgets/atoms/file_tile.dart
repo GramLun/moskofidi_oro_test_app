@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'package:oro_moskofidi_test_app/features/files/domain/models/value_objects/file.dart';
+
 class FileTile extends StatelessWidget {
   @protected
-  final Uri fileUri;
+  final File file;
 
   @protected
   final VoidCallback? onCardTap;
@@ -11,7 +13,7 @@ class FileTile extends StatelessWidget {
   final VoidCallback? onDownloadTap;
 
   const FileTile({
-    required this.fileUri,
+    required this.file,
     this.onDownloadTap,
     this.onCardTap,
     super.key,
@@ -30,7 +32,7 @@ class FileTile extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(fileUri.path.split('/').last),
+              Text(file.name),
               const SizedBox(width: 16),
               IconButton(
                 onPressed: () {},

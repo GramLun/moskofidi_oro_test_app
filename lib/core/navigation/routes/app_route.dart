@@ -1,8 +1,8 @@
-import 'package:oro_moskofidi_test_app/core/utils/models/route.dart';
+import 'package:oro_moskofidi_test_app/core/navigation/models/route.dart';
 
-class AppRoute {
-  static const fileDetails = Route(
+final class AppRoute {
+  static const fileDetails = BaseRoute(
     name: 'file_details_screen',
-    path: '/files/details',
+    path: '/files/:url/details',
   );
 }

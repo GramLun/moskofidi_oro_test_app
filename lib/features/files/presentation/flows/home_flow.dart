@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:oro_moskofidi_test_app/core/helpers/localizations.dart';
+import 'package:oro_moskofidi_test_app/core/utils/localizations.dart';
 
 class HomeFlow extends ConsumerStatefulWidget {
   @protected

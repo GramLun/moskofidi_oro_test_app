@@ -5,6 +5,10 @@
     "filesScreenTitle": "Files",
     "historyScreenTitle": "History",
     
+
+    "fileScreenTitle": "File View",
+
+
     "viewingHistoryTabCaption": "Viewed",
     "downloadingHistoryTabCaption": "Downloaded",
     
