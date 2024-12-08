@@ -32,7 +32,9 @@ class FileTile extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(file.name),
+              Expanded(
+                child: Text(file.name),
+              ),
               const SizedBox(width: 16),
               IconButton(
                 onPressed: () {},

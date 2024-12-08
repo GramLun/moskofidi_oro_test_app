@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:oro_moskofidi_test_app/core/utils/localizations.dart';
 
-class HomeFlow extends ConsumerStatefulWidget {
+class HomeFlow extends StatelessWidget {
   @protected
   final StatefulNavigationShell navigationShell;
 
@@ -14,27 +13,15 @@ class HomeFlow extends ConsumerStatefulWidget {
   });
 
   @override
-  ConsumerState<HomeFlow> createState() {
-    return _HomeFlowState();
-  }
-}
-
-class _HomeFlowState extends ConsumerState<HomeFlow> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: widget.navigationShell,
+      body: navigationShell,
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: widget.navigationShell.currentIndex,
+        currentIndex: navigationShell.currentIndex,
         onTap: (index) {
-          widget.navigationShell.goBranch(
+          navigationShell.goBranch(
             index,
-            initialLocation: index == widget.navigationShell.currentIndex,
+            initialLocation: index == navigationShell.currentIndex,
           );
         },
         items: [
