@@ -6,3 +6,9 @@ extension LocalizationsExtension on BuildContext {
     return AppLocalizations.of(this);
   }
 }
+
+extension UrlGetNameExtension on String {
+  String get fileName {
+    return split('/').last.split('?').first;
+  }
+}

@@ -14,9 +14,9 @@ class ViewHistoryBloc extends Bloc<ViewHistoryEvent, ViewHistoryState> {
 
   ViewHistoryBloc({
     required this.viewHistoryDataSource,
-  }) : super(ViewHistoryState(filesList: viewHistoryDataSource.state)) {
+  }) : super(ViewHistoryState(filesUrlList: viewHistoryDataSource.state)) {
     on<AddViewedFileEvent>((event, emit) async {
-      final snapshot = state.filesList;
+      final snapshot = state.filesUrlList;
 
       await viewHistoryDataSource.put([
         ...snapshot,
@@ -24,7 +24,7 @@ class ViewHistoryBloc extends Bloc<ViewHistoryEvent, ViewHistoryState> {
       ]);
 
       emit(
-        ViewHistoryState(filesList: viewHistoryDataSource.state),
+        ViewHistoryState(filesUrlList: viewHistoryDataSource.state),
       );
     });
   }

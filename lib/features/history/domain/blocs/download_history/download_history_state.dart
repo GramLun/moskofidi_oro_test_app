@@ -4,6 +4,6 @@ part of 'download_history_bloc.dart';
 class DownloadHistoryState with _$DownloadHistoryState {
   const factory DownloadHistoryState({
     /// Files list in download history.
-    required final List<String> filesList,
+    required final List<String> filesUrlList,
   }) = _DownloadHistoryState;
 }

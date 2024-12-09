@@ -37,7 +37,7 @@ class FileTile extends StatelessWidget {
               ),
               const SizedBox(width: 16),
               IconButton(
-                onPressed: () {},
+                onPressed: onDownloadTap,
                 icon: const Icon(
                   Icons.download,
                 ),

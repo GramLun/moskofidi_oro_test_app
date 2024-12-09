@@ -19,7 +19,7 @@ class _ViewHistoryListViewState extends State<ViewHistoryListView> {
   Widget build(BuildContext context) {
     return BlocBuilder<ViewHistoryBloc, ViewHistoryState>(
       builder: (context, state) {
-        return state.filesList.isEmpty
+        return state.filesUrlList.isEmpty
             ? Center(
                 child: Text(context.l10n.emptyMessage),
               )
@@ -27,9 +27,9 @@ class _ViewHistoryListViewState extends State<ViewHistoryListView> {
                 child: Column(
                   children: [
                     const SizedBox(height: 12),
-                    for (final fileName in state.filesList) ...[
+                    for (final url in state.filesUrlList) ...[
                       ViewHistoryTile(
-                        caption: fileName.split('/').last.split('?').first,
+                        caption: url.fileName,
                       ),
                       const SizedBox(height: 4),
                     ]

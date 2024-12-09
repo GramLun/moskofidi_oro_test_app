@@ -1,4 +1,7 @@
-# Miscellaneous
+# Generated code
+**/*.freezed.dart
+
+# Miscellaneousss
 *.class
 *.log
 *.pyc

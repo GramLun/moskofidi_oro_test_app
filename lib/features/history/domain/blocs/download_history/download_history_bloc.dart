@@ -15,16 +15,17 @@ class DownloadHistoryBloc
 
   DownloadHistoryBloc({
     required this.downloadHistoryDataSource,
-  }) : super(DownloadHistoryState(filesList: downloadHistoryDataSource.state)) {
+  }) : super(DownloadHistoryState(
+            filesUrlList: downloadHistoryDataSource.state)) {
     on<AddDownloadedFileEvent>((event, emit) async {
-      final snapshot = state.filesList;
+      final snapshot = state.filesUrlList;
 
       await downloadHistoryDataSource.put([
         ...snapshot,
         event.fileUrl,
       ]);
 
-      emit(DownloadHistoryState(filesList: downloadHistoryDataSource.state));
+      emit(DownloadHistoryState(filesUrlList: downloadHistoryDataSource.state));
     });
   }
 }

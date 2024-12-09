@@ -4,6 +4,6 @@ part of 'view_history_bloc.dart';
 class ViewHistoryState with _$ViewHistoryState {
   const factory ViewHistoryState({
     /// Files list in view history.
-    required final List<String> filesList,
+    required final List<String> filesUrlList,
   }) = _ViewHistoryState;
 }
