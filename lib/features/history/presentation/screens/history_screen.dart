@@ -10,21 +10,7 @@ class HistoryScreen extends StatefulWidget {
   State<HistoryScreen> createState() => _HistoryScreenState();
 }
 
-class _HistoryScreenState extends State<HistoryScreen>
-    with SingleTickerProviderStateMixin {
-  @protected
-  late final TabController tabController;
-
-  @override
-  void initState() {
-    super.initState();
-
-    tabController = TabController(
-      length: 2,
-      vsync: this,
-    );
-  }
-
+class _HistoryScreenState extends State<HistoryScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -35,6 +21,7 @@ class _HistoryScreenState extends State<HistoryScreen>
             centerTitle: true,
             title: Text(context.l10n.historyScreenTitle),
             bottom: TabBar(
+              indicatorSize: TabBarIndicatorSize.tab,
               tabs: [
                 Tab(text: context.l10n.viewingHistoryTabCaption),
                 Tab(text: context.l10n.downloadingHistoryTabCaption),
@@ -50,12 +37,5 @@ class _HistoryScreenState extends State<HistoryScreen>
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    tabController.dispose();
-
-    super.dispose();
   }
 }

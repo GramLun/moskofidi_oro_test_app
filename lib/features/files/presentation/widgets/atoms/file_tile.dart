@@ -28,7 +28,7 @@ class FileTile extends StatelessWidget {
         onTap: onCardTap,
         radius: 20,
         child: Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ViewHistoryTile extends StatelessWidget {
+class HistoryRecordTile extends StatelessWidget {
   @protected
   final String caption;
 
-  const ViewHistoryTile({
+  const HistoryRecordTile({
     required this.caption,
     super.key,
   });
@@ -15,12 +15,14 @@ class ViewHistoryTile extends StatelessWidget {
       color: const Color(0xFFF2F2F2),
       elevation: 0,
       child: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
-              child: Text(caption),
+              child: Center(
+                child: Text(caption),
+              ),
             ),
           ],
         ),

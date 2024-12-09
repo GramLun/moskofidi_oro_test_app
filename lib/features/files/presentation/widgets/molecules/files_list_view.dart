@@ -3,13 +3,15 @@ import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:go_router/go_router.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 
 import 'package:oro_moskofidi_test_app/core/navigation/routes/app_route.dart';
 
 import 'package:oro_moskofidi_test_app/features/files/domain/models/value_objects/file.dart';
-
 import 'package:oro_moskofidi_test_app/features/files/presentation/widgets/atoms/file_tile.dart';
+
+import 'package:oro_moskofidi_test_app/features/history/domain/blocs/download_history/download_history_bloc.dart';
 
 class FilesListView extends StatelessWidget {
   @protected
@@ -34,6 +36,12 @@ class FilesListView extends StatelessWidget {
       final result = await ImageGallerySaver.saveImage(response.bodyBytes);
 
       if (result['isSuccess'] == true) {
+        // if (!context.mounted) return;
+
+        (context.read<DownloadHistoryBloc>()).add(
+          DownloadHistoryEvent.addUrlToStore(url),
+        );
+
         message = 'Image successfully saved into Files/Images/Pictures.';
         scaffoldMessenger.showSnackBar(SnackBar(
           content: Text(

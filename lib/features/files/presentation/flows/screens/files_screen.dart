@@ -2,6 +2,8 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 
+import 'package:oro_moskofidi_test_app/core/utils/localizations.dart';
+
 import 'package:oro_moskofidi_test_app/features/files/presentation/widgets/molecules/files_list_view.dart';
 
 class FilesScreen extends StatefulWidget {
@@ -23,10 +25,16 @@ class _FilesScreenState extends State<FilesScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: FilesListView(
-          source: UnmodifiableListView(filesSource),
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(context.l10n.filesScreenTitle),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: FilesListView(
+            source: UnmodifiableListView(filesSource),
+          ),
         ),
       ),
     );

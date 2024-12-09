@@ -27,5 +27,12 @@ class ViewHistoryBloc extends Bloc<ViewHistoryEvent, ViewHistoryState> {
         ViewHistoryState(filesUrlList: viewHistoryDataSource.state),
       );
     });
+    on<ClearViewHistory>((event, emit) async {
+      await viewHistoryDataSource.put([]);
+
+      emit(
+        ViewHistoryState(filesUrlList: viewHistoryDataSource.state),
+      );
+    });
   }
 }

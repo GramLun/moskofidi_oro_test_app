@@ -20,7 +20,7 @@ class DownloadHistoryStorage extends ValueStore<List<String>>
     required this.sharedPreferences,
     final List<String>? initialValue,
   }) : super(
-          (initialValue ?? ['']),
+          (initialValue ?? []),
         );
 
   factory DownloadHistoryStorage.create({

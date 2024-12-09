@@ -27,5 +27,12 @@ class DownloadHistoryBloc
 
       emit(DownloadHistoryState(filesUrlList: downloadHistoryDataSource.state));
     });
+    on<ClearDownloadHistory>((event, emit) async {
+      await downloadHistoryDataSource.put([]);
+
+      emit(
+        DownloadHistoryState(filesUrlList: downloadHistoryDataSource.state),
+      );
+    });
   }
 }

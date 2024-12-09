@@ -1,0 +1,14 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        enabled: true
+        options:
+          when:
+            when: false
+            maybe_when: false
+            when_or_null: false
+          make_collections_unmodifiable: false
+        generate_for:
+          include:
+            - lib/features/**/domain/blocs/**/**.dart

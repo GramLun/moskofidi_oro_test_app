@@ -3,9 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:oro_moskofidi_test_app/core/utils/localizations.dart';
 
+import 'package:oro_moskofidi_test_app/features/history/presentation/widgets/history.dart';
 import 'package:oro_moskofidi_test_app/features/history/domain/blocs/view_history/view_history_bloc.dart';
-
-import 'package:oro_moskofidi_test_app/features/history/presentation/widgets/atoms/view_history_tile.dart';
 
 class ViewHistoryListView extends StatefulWidget {
   const ViewHistoryListView({super.key});
@@ -26,13 +25,24 @@ class _ViewHistoryListViewState extends State<ViewHistoryListView> {
             : SingleChildScrollView(
                 child: Column(
                   children: [
-                    const SizedBox(height: 12),
+                    const SizedBox(height: 20),
+                    ClearHistoryButton(
+                      onPressed: (value) {
+                        if (value) {
+                          (context.read<ViewHistoryBloc>()).add(
+                            const ViewHistoryEvent.clearStore(),
+                          );
+                        }
+                      },
+                    ),
+                    const SizedBox(height: 20),
                     for (final url in state.filesUrlList) ...[
-                      ViewHistoryTile(
+                      HistoryRecordTile(
                         caption: url.fileName,
                       ),
                       const SizedBox(height: 4),
-                    ]
+                    ],
+                    const SizedBox(height: 16),
                   ],
                 ),
               );

@@ -36,7 +36,6 @@ dependencies:
   
   # platform
   shared_preferences: 2.3.3
-  permission_handler: 11.3.1
   image_gallery_saver: 2.0.3
   cached_network_image: 3.4.1
 

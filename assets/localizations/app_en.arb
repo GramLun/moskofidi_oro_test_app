@@ -3,14 +3,20 @@
     "language": "English",
 
     "filesScreenTitle": "Files",
-    "historyScreenTitle": "History",
-    
-
     "fileScreenTitle": "File View",
-
+    "historyScreenTitle": "History",
 
     "viewingHistoryTabCaption": "Viewed",
     "downloadingHistoryTabCaption": "Downloaded",
     
-    "emptyMessage": "Empty"
+
+    "emptyMessage": "Empty",
+
+    
+    "noButtonCaption": "No",
+    "yesButtonCaption": "Yes",
+    "clearHistoryButtonCaption": "Clear History",
+
+    "clearHistoryDialogTitle": "Do You want to clear history?",
+    "clearHistoryDialogDescription": "When you click 'Yes', the browsing history will be deleted."
 }

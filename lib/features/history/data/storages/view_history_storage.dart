@@ -54,7 +54,9 @@ class ViewHistoryStorage extends ValueStore<List<String>>
   ) async {
     super.put(state);
 
-    if (state.isNotEmpty) {
+    if (state.isEmpty) {
+      await sharedPreferences.remove(kViewHistoryStorageKey);
+    } else {
       await sharedPreferences.setStringList(kViewHistoryStorageKey, state);
     }
   }
